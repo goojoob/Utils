@@ -5,6 +5,6 @@ public struct Utils {
     }
 
     public func show() -> String {
-        return var
+        return text
     }
 }
