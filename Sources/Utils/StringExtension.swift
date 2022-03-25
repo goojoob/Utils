@@ -1,7 +1,7 @@
 extension String {
 
-    public var isNotEmpty: Bool {
-        !self.isEmpty
+    var protectQuotation: String {
+        self.replacingOccurrences(of: "\"", with: "\\\"")
     }
 
 }
