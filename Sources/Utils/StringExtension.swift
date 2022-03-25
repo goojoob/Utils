@@ -1,6 +1,6 @@
 extension String {
 
-    var isNotEmpty -> Bool {
+    var isNotEmpty: Bool {
         !self.isEmpty
     }
 
