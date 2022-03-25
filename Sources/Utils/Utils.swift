@@ -3,4 +3,8 @@ public struct Utils {
 
     public init() {
     }
+
+    public show() -> String {
+        return var
+    }
 }
