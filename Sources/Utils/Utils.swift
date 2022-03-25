@@ -4,7 +4,7 @@ public struct Utils {
     public init() {
     }
 
-    public show() -> String {
+    public func show() -> String {
         return var
     }
 }
