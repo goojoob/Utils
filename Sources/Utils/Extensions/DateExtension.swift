@@ -1,6 +1,7 @@
 import Foundation
 
 @available(macOS 12.0, *)
+@available(iOS 15.0, *)
 extension Date {
 
     var monthYear: String {
