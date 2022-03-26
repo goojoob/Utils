@@ -2,7 +2,7 @@ import Foundation
 
 extension String {
 
-    var protectQuotation: String {
+    public var protectQuotation: String {
         self.replacingOccurrences(of: "\"", with: "\\\"")
     }
 

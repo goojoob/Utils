@@ -4,11 +4,11 @@ import Foundation
 @available(iOS 15.0, *)
 extension Date {
 
-    var monthYear: String {
+    public var monthYear: String {
         return self.formatted(.dateTime.year().month(.wide))
     }
 
-    var stringValue: String {
+    public var stringValue: String {
         return self.formatted(.dateTime.year().month().day())
     }
 
