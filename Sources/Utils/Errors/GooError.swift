@@ -1,5 +1,7 @@
-import Foundation
+import SwiftUI
 
+@available(macOS 12.0, *)
+@available(iOS 15.0, *)
 struct GooError: Error {
 
     enum ErrorType {
