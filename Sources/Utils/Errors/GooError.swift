@@ -11,10 +11,17 @@ public struct GooError: Error {
         case noError
     }
 
-    public var title: LocalizedStringKey = "error_generic_title"
-    public var desc: LocalizedStringKey = "error_generic_descr"
-    public var dismissButton: LocalizedStringKey = "error_dismissButton"
-    public var error: ErrorType = .noError
-    public var alert: Bool = false
+    public var title: LocalizedStringKey
+    public var desc: LocalizedStringKey
+    public var dismissButton: LocalizedStringKey
+    public var error: ErrorType
+    public var alert: Bool
 
+    public init() {
+        title = "error_generic_title"
+        desc = "error_generic_descr"
+        dismissButton = "error_dismissButton"
+        error = .noError
+        alert = false
+    }
 }
