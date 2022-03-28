@@ -27,12 +27,11 @@ public struct GooError: Error {
 
     public init(title: LocalizedStringKey,
                 desc: LocalizedStringKey,
-                dismissButton: LocalizedStringKey,
                 error: ErrorType,
                 alert: Bool) {
         self.title = title
         self.desc = desc
-        self.dismissButton = dismissButton
+        self.dismissButton = "error_dismissButton"
         self.error = error
         self.alert = alert
     }
