@@ -24,4 +24,16 @@ public struct GooError: Error {
         error = .noError
         alert = false
     }
+
+    public init(title: LocalizedStringKey,
+                desc: LocalizedStringKey,
+                dismissButton: LocalizedStringKey,
+                error: ErrorType,
+                alert: Bool) {
+        self.title = title
+        self.desc = desc
+        self.dismissButton = dismissButton
+        self.error = error
+        self.alert = alert
+    }
 }
