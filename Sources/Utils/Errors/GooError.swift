@@ -2,7 +2,7 @@ import SwiftUI
 
 @available(macOS 12.0, *)
 @available(iOS 15.0, *)
-struct GooError: Error {
+public struct GooError: Error {
 
     enum ErrorType {
         case fatal
