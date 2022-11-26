@@ -16,7 +16,7 @@ public class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate
     var request: SKProductsRequest!
     var productsStore: [String: Int] = [:]
 
-    init(products: [String: Int]) {
+    public init(products: [String: Int]) {
         super.init()
 
         productsStore = products
