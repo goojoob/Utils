@@ -3,9 +3,9 @@ import SwiftUI
 #if !os(macOS)
 
 extension UIScreen {
-    static let screenWidth = UIScreen.main.bounds.size.width
-    static let screenHeight = UIScreen.main.bounds.size.height
-    static let screenSize = UIScreen.main.bounds.size
+    static public let screenWidth = UIScreen.main.bounds.size.width
+    static public let screenHeight = UIScreen.main.bounds.size.height
+    static public let screenSize = UIScreen.main.bounds.size
 }
 
 #endif
