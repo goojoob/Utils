@@ -9,11 +9,11 @@ import StoreKit
 
 @available(macOS 12.0, *)
 @available(iOS 15.0, *)
-class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    @Published var myProducts: [SKProduct] = [SKProduct]()
-    @Published var transactionState: SKPaymentTransactionState?
+public class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    @Published public var myProducts: [SKProduct] = [SKProduct]()
+    @Published public var transactionState: SKPaymentTransactionState?
+    @Published public var lastBuy: Int = 0
     var request: SKProductsRequest!
-    var lastBuy: Int = 0
     var productsStore: [String: Int] = [:]
 
     init(products: [String: Int]) {
@@ -33,7 +33,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         request.start()
     }
 
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("StoreManager - Fetching products: Did receive response")
 
         if response.products.isNotEmpty {
@@ -55,13 +55,13 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         }
     }
 
-    func request(_ request: SKRequest, didFailWithError error: Error) {
+    public func request(_ request: SKRequest, didFailWithError error: Error) {
         print("StoreManager - Request did fail: \(error)")
     }
 
     // PAY PRODUCT
 
-    func purchaseProduct(product: SKProduct) {
+    public func purchaseProduct(product: SKProduct) {
         if SKPaymentQueue.canMakePayments() {
             let payment = SKPayment(product: product)
             SKPaymentQueue.default().add(payment)
@@ -70,7 +70,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
         }
     }
 
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchasing:
@@ -95,7 +95,7 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
 
     // RESTORE PRODUCT
 
-    func restoreProducts() {
+    public func restoreProducts() {
         print("StoreManager - Restoring products ...")
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
