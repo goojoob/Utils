@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Antonio Rodriguez Cia on 26/11/22.
-//
-
 import Foundation
 
 class NetworkService<PromptObject, ResultObject> {
